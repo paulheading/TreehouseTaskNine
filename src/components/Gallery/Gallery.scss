@@ -1,0 +1,38 @@
+
+@import '../../helpers.scss';
+
+.photo-container {
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+
+    img {
+      width: 100%;
+      transform: scale(1.25);
+      transition: transform 1.25s;
+    }
+
+    li {
+      width: 220px;
+      height: 165px;
+      overflow: hidden;
+      margin-bottom: 15px;
+
+      @media#{$max767} {
+        margin: auto;
+      }
+
+      &:hover img {
+        transform: scale(1.65);
+      }
+    }
+  }
+
+  .not-found {
+    width: 100%;
+  }
+}

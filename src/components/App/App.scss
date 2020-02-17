@@ -1,0 +1,38 @@
+
+@import '../../helpers.scss';
+
+body {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #3f4850;
+
+  @media#{$max767} {
+    padding-top: 2em;
+  }
+
+  @media#{$min768} {
+    padding-top: 4em;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 52px 0 40px;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.container {
+  @media#{$min768} {
+    max-width: 960px;
+    margin: auto;
+  }
+}

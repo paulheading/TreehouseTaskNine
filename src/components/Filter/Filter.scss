@@ -1,0 +1,38 @@
+
+@import '../../helpers.scss';
+
+.main-nav {
+
+  .active {
+    background-color: $darkBlue;
+  }
+
+  ul {
+    @media#{$min768} {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  li {
+    width: 100%;
+    margin-bottom: 1em;
+
+    @media#{$min768} {
+      margin: 10px;
+      width: 100px;
+    }
+  }
+
+  a {
+    display: block;
+    background: $blue;
+    border-radius: 3px;
+    padding: 5px;
+    color: $white;
+
+    &:hover {
+      background-color: $darkBlue;
+    }
+  }
+}
