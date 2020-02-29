@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './GalleryItem.scss';
 
 const GalleryItem = props => {

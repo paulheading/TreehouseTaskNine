@@ -6,8 +6,15 @@ import './Search.scss';
 
 export default class Search extends Component {
 
-  state = {
-    searchText : ""
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchText : ""
+    }
+  }
+
+  componentDidMount() {
+    this.props.changeSearch(this.props.preset);
   }
 
   onSearchChange = e => {
@@ -16,17 +23,26 @@ export default class Search extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSearch(this.state.searchText);
+    this.props.changeLoading(true);
+    this.props.changeSearch(this.state.searchText);
+
+    let query = this.query.value, path = `/search/${query}`;
+
+    if (query.length > 0) {
+      this.props.pushPath(path);
+    }
+
     e.currentTarget.reset();
   }
 
   render() {
     return (
       <form className="search-form" onSubmit={this.handleSubmit}>
-        <input type="search"
-               onChange={this.onSearchChange}
+        <input ref={ (input) => this.query = input }
+               type="search"
                name="search"
-               placeholder="search" />
+               onChange={this.onSearchChange}
+               placeholder={this.props.preset}/>
         <button type="submit" id="submit" className="search-button"><img src={icon} className="App-logo" alt="logo" /></button>
       </form>
     );
