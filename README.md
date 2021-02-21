@@ -1,6 +1,6 @@
 # Treehouse Task Nine
 
-My first React site!
+My first React site! I used the handy Create React App tool to build a fast and lightweight gallery app.
 
 ## Instructions
 
